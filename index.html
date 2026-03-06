@@ -1,25 +1,11 @@
 <!DOCTYPE html>
-                        <html lang="en">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <style>
-                body {
-                  background-color: white; /* Ensure the iframe has a white background */
-                }
-
-                
-              </style>
-                        </head>
-                        <body>
-                            <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Application Excel Intelligente - Automatisez, Optimisez, Dominez vos données avec Excel. Formations et applications Excel professionnelles.">
-    <meta name="keywords" content="Excel, Formation Excel, Application Excel, Automatisation, VBA, Gestion">
-    <title>Application Excel Intelligente | Automatisez vos données</title>
+    <meta name="description" content="Application Excel Intelligente - Spécial 8 Mars : Automatisez, Optimisez, Dominez vos données avec Excel. Formations et applications Excel professionnelles.">
+    <meta name="keywords" content="Excel, Formation Excel, Application Excel, Automatisation, VBA, Gestion, 8 Mars, Femme Cameroun">
+    <title>🌸 Application Excel Pro | Spécial Journée de la Femme - Cameroun</title>
     
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
@@ -45,11 +31,18 @@
             theme: {
                 extend: {
                     colors: {
+                        // Couleurs Excel Pro
                         primary: '#0A1F44',
                         secondary: '#00A86B',
                         accent: '#1E40AF',
                         whatsapp: '#25D366',
                         whatsappHover: '#128C7E',
+                        // Couleurs 8 Mars & Cameroun
+                        womensPurple: '#8e44ad',
+                        womensPink: '#fdf2f8',
+                        camGreen: '#007a5e',
+                        camRed: '#ce1126',
+                        camYellow: '#fcd116',
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
@@ -61,41 +54,119 @@
 
     <style>
         * { font-family: 'Poppins', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #0A1F44 0%, #1E40AF 100%); }
+        
+        /* --- Thème 8 Mars & Cameroun --- */
+        .gradient-8mars { 
+            background: linear-gradient(135deg, #8e44ad 0%, #6c3483 50%, #007a5e 100%); 
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Motifs décoratifs Cameroun */
+        .gradient-8mars::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(252,209,22,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        .gradient-8mars::after {
+            content: "★";
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            font-size: 12rem;
+            color: rgba(255,255,255,0.08);
+            font-weight: bold;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.2); opacity: 0.5; } }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
+        
+        /* Badge spécial 8 Mars */
+        .badge-8mars {
+            background: linear-gradient(135deg, #ce1126, #fcd116);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+        
+        /* Cartes avec bordure thématique */
+        .card-8mars {
+            border-left: 5px solid #8e44ad;
+            transition: all 0.3s ease;
+        }
+        .card-8mars:hover {
+            border-left-color: #fcd116;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(142, 68, 173, 0.2);
+        }
+        
+        /* Boutons WhatsApp thématiques */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-whatsapp::before {
+            content: "";
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        .btn-whatsapp:hover::before { left: 100%; }
+        .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(37,211,102,0.4); }
+        
+        /* Animations générales */
         .gradient-text {
-            background: linear-gradient(135deg, #00A86B 0%, #10B981 100%);
+            background: linear-gradient(135deg, #00A86B 0%, #8e44ad 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .card-hover { transition: all 0.3s ease; }
         .card-hover:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .btn-whatsapp {
-            background: #25D366;
-            transition: all 0.3s ease;
-        }
-        .btn-whatsapp:hover {
-            background: #128C7E;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37,211,102,0.4);
-        }
+        
         .nav-blur {
             backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.95);
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, #007a5e, #ce1126, #fcd116) 1;
         }
-        .dark .nav-blur { background: rgba(10,31,68,0.9); }
+        .dark .nav-blur { background: rgba(10,31,68,0.95); }
+        
         .floating { animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        
         .counter { font-variant-numeric: tabular-nums; }
+        
+        /* Modals & Loaders */
         .ussd-modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;
         }
         .ussd-modal.active { display: flex; }
+        
         .loader {
-            border: 4px solid #f3f3f3; border-top: 4px solid #00A86B; border-radius: 50%;
+            border: 4px solid #f3f3f3; border-top: 4px solid #8e44ad; border-radius: 50%;
             width: 40px; height: 40px; animation: spin 1s linear infinite;
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
         .glass-effect {
             background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
@@ -103,9 +174,19 @@
         .dark .glass-effect {
             background: rgba(10,31,68,0.5); border: 1px solid rgba(255,255,255,0.1);
         }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gradient-8mars::after { font-size: 6rem; left: 50%; transform: translateX(-50%) translateY(20px); }
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+
+    <!-- BANNIÈRE SPÉCIALE 8 MARS -->
+    <div class="bg-gradient-to-r from-camRed via-camYellow to-camGreen text-white text-center py-2 text-sm font-semibold">
+        🌸 <span class="mx-2">Journée Internationale des Droits des Femmes</span> | 🇨🇲 <span class="mx-2">Fierté Camerounaise</span> | <span class="badge-8mars ml-2">🎉 Offre Spéciale 8 Mars</span>
+    </div>
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 nav-blur shadow-lg transition-all duration-300" id="navbar">
@@ -113,20 +194,19 @@
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-2" data-aos="fade-right">
                     <i class="fas fa-file-excel text-3xl text-secondary"></i>
-                    <span class="text-2xl font-bold text-primary dark:text-white">Excel<span class="text-secondary">Pro</span></span>
+                    <span class="text-2xl font-bold text-primary dark:text-white">Excel<span class="gradient-text">Pro</span></span>
                 </div>
-                <div class="hidden md:flex items-center space-x-8" data-aos="fade-down">
-                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-secondary transition">Accueil</a>
-                    <a href="#formations" class="text-gray-700 dark:text-gray-300 hover:text-secondary transition">Formations</a>
-                    <a href="#applications" class="text-gray-700 dark:text-gray-300 hover:text-secondary transition">Applications</a>
-                    <a href="#temoignages" class="text-gray-700 dark:text-gray-300 hover:text-secondary transition">Témoignages</a>
-                    <a href="#faq" class="text-gray-700 dark:text-gray-300 hover:text-secondary transition">FAQ</a>
-                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-secondary transition">Contact</a>
-                    <button onclick="toggleDarkMode()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                <div class="hidden md:flex items-center space-x-6" data-aos="fade-down">
+                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-womensPurple transition font-medium">Accueil</a>
+                    <a href="#formations" class="text-gray-700 dark:text-gray-300 hover:text-womensPurple transition font-medium">Formations</a>
+                    <a href="#applications" class="text-gray-700 dark:text-gray-300 hover:text-womensPurple transition font-medium">Applications</a>
+                    <a href="#temoignages" class="text-gray-700 dark:text-gray-300 hover:text-womensPurple transition font-medium">Témoignages</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-womensPurple transition font-medium">Contact</a>
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition" title="Changer le thème">
                         <i class="fas fa-moon dark:hidden text-primary"></i>
                         <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
                     </button>
-                    <a href="#admin" class="btn-primary text-white px-6 py-2 rounded-full font-semibold">
+                    <a href="#admin" onclick="openAdminModal()" class="bg-primary hover:bg-blue-800 text-white px-5 py-2 rounded-full font-semibold transition flex items-center">
                         <i class="fas fa-lock mr-2"></i>Admin
                     </a>
                 </div>
@@ -136,56 +216,57 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-primary">
-            <a href="#home" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Accueil</a>
-            <a href="#formations" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Formations</a>
-            <a href="#applications" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Applications</a>
-            <a href="#contact" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-primary border-t">
+            <a href="#home" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Accueil</a>
+            <a href="#formations" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Formations</a>
+            <a href="#applications" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Applications</a>
+            <a href="#contact" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 gradient-bg relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
+    <!-- Hero Section - Thème 8 Mars -->
+    <section id="home" class="pt-32 pb-20 gradient-8mars relative">
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
             <div class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full mix-blend-overlay filter blur-3xl animate-pulse delay-1000"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-camYellow rounded-full mix-blend-overlay filter blur-3xl animate-pulse delay-1000"></div>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <div class="inline-block px-4 py-2 rounded-full bg-white/20 text-white mb-6">
-                        <i class="fas fa-star text-yellow-400 mr-2"></i>Plus de 500 clients satisfaits
+                    <div class="inline-block px-4 py-2 rounded-full glass-effect text-white mb-6 border border-white/30">
+                        <i class="fas fa-heart text-pink-300 mr-2"></i>Plus de 500 femmes formées au Cameroun
                     </div>
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                        Automatisez, Optimisez, <span class="text-secondary">Dominez</span> vos données avec Excel
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                        🌸 <span class="text-camYellow">Femmes du Cameroun</span>,<br>Automatisez & Dominez vos données avec Excel
                     </h1>
-                    <p class="text-xl text-gray-300 mb-8">
-                        Transformez votre façon de travailler avec nos formations expertes et applications Excel sur mesure.
+                    <p class="text-xl text-gray-200 mb-8">
+                        En ce 8 mars, offrez-vous ou offrez à vos collaboratrices les outils Excel qui libèrent du temps, réduisent les erreurs et boostent la productivité.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#formations" class="btn-whatsapp text-white px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center">
+                        <a href="#formations" class="btn-whatsapp text-white px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center shadow-lg">
                             <i class="fab fa-whatsapp mr-2"></i>Voir les formations
                         </a>
-                        <a href="#applications" class="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center hover:bg-gray-100 transition">
-                            <i class="fas fa-shopping-cart mr-2"></i>Voir les applications
+                        <a href="#applications" class="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center hover:bg-gray-100 transition shadow-lg">
+                            <i class="fas fa-gift mr-2 text-camRed"></i>Applications en promo
                         </a>
                     </div>
                     <div class="mt-12 flex items-center space-x-8 text-white">
-                        <div><div class="text-3xl font-bold counter" data-target="500">0</div><div class="text-sm opacity-80">Clients</div></div>
+                        <div><div class="text-3xl font-bold counter" data-target="500">0</div><div class="text-sm opacity-90">Femmes formées</div></div>
                         <div class="w-px h-12 bg-white/30"></div>
-                        <div><div class="text-3xl font-bold counter" data-target="12">0</div><div class="text-sm opacity-80">Applications</div></div>
+                        <div><div class="text-3xl font-bold counter" data-target="12">0</div><div class="text-sm opacity-90">Applications</div></div>
                         <div class="w-px h-12 bg-white/30"></div>
-                        <div><div class="text-3xl font-bold counter" data-target="5">0</div><div class="text-sm opacity-80">Années d'expérience</div></div>
+                        <div><div class="text-3xl font-bold counter" data-target="5">0</div><div class="text-sm opacity-90">Ans d'expertise</div></div>
                     </div>
                 </div>
                 <div class="relative" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=600&fit=crop" alt="Excel Dashboard" class="rounded-2xl shadow-2xl floating">
-                    <div class="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-camYellow to-camRed rounded-3xl opacity-20 blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=600&fit=crop" alt="Dashboard Excel Femme Cameroun" class="rounded-2xl shadow-2xl floating relative border-4 border-white/20">
+                    <div class="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl border-l-4 border-camGreen">
                         <div class="flex items-center space-x-3">
-                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-check text-secondary text-xl"></i>
+                            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-rocket text-womensPurple text-xl"></i>
                             </div>
-                            <div><div class="font-semibold text-primary dark:text-white">Gain de temps</div><div class="text-sm text-gray-500">Jusqu'à 80%</div></div>
+                            <div><div class="font-semibold text-primary dark:text-white">Gain de temps</div><div class="text-sm text-gray-500">Jusqu'à 80% ⏱️</div></div>
                         </div>
                     </div>
                 </div>
@@ -194,82 +275,108 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-12 bg-white dark:bg-gray-800 shadow-lg">
+    <section class="py-12 bg-white dark:bg-gray-800 shadow-lg border-t-4 border-camYellow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div data-aos="fade-up" data-aos-delay="0"><i class="fas fa-users text-4xl text-secondary mb-2"></i><div class="text-3xl font-bold text-primary dark:text-white counter" data-target="500">0</div><div class="text-gray-600 dark:text-gray-400">Clients Formés</div></div>
-                <div data-aos="fade-up" data-aos-delay="100"><i class="fas fa-chart-line text-4xl text-secondary mb-2"></i><div class="text-3xl font-bold text-primary dark:text-white counter" data-target="98">0</div><div class="text-gray-600 dark:text-gray-400">% Satisfaction</div></div>
-                <div data-aos="fade-up" data-aos-delay="200"><i class="fas fa-clock text-4xl text-secondary mb-2"></i><div class="text-3xl font-bold text-primary dark:text-white counter" data-target="24">0</div><div class="text-gray-600 dark:text-gray-400">h Support</div></div>
-                <div data-aos="fade-up" data-aos-delay="300"><i class="fas fa-shield-alt text-4xl text-secondary mb-2"></i><div class="text-3xl font-bold text-primary dark:text-white counter" data-target="100">0</div><div class="text-gray-600 dark:text-gray-400">% Sécurisé</div></div>
+                <div data-aos="fade-up" data-aos-delay="0">
+                    <i class="fas fa-users text-4xl text-womensPurple mb-2"></i>
+                    <div class="text-3xl font-bold text-primary dark:text-white counter" data-target="500">0</div>
+                    <div class="text-gray-600 dark:text-gray-400">Femmes formées</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-chart-line text-4xl text-camGreen mb-2"></i>
+                    <div class="text-3xl font-bold text-primary dark:text-white counter" data-target="98">0</div>
+                    <div class="text-gray-600 dark:text-gray-400">% Satisfaction</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-clock text-4xl text-camRed mb-2"></i>
+                    <div class="text-3xl font-bold text-primary dark:text-white counter" data-target="24">0</div>
+                    <div class="text-gray-600 dark:text-gray-400">h Support</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-shield-alt text-4xl text-camYellow mb-2"></i>
+                    <div class="text-3xl font-bold text-primary dark:text-white counter" data-target="100">0</div>
+                    <div class="text-gray-600 dark:text-gray-400">% Sécurisé</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Formations Section -->
-    <section id="formations" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="formations" class="py-20 bg-womensPink dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-primary dark:text-white mb-4">Nos Formations Excel</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-400">En présentiel et visioconférence</p>
-                <div class="w-24 h-1 bg-secondary mx-auto mt-4 rounded-full"></div>
+                <span class="badge-8mars mb-4">🎁 Offre Spéciale 8 Mars</span>
+                <h2 class="text-4xl font-bold text-primary dark:text-white mb-4">Nos Formations Excel pour Femmes</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">En présentiel et visioconférence • <span class="text-camRed font-semibold">-15% pour les inscriptions avant le 15 mars</span></p>
+                <div class="w-24 h-1 bg-gradient-to-r from-camGreen via-camRed to-camYellow mx-auto mt-4 rounded-full"></div>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Offre Basique -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="0">
-                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden card-8mars card-hover" data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-womensPurple flex items-center justify-center">
                         <i class="fas fa-seedling text-6xl text-white"></i>
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-primary dark:text-white mb-2">Offre Basique</h3>
-                        <div class="text-3xl font-bold text-secondary mb-4">10 000 - 20 000 FCFA</div>
+                        <div class="flex items-baseline gap-2 mb-4">
+                            <span class="text-3xl font-bold text-secondary">10 000 - 20 000 FCFA</span>
+                            <span class="text-sm text-gray-500 line-through">15 000 - 23 500 FCFA</span>
+                        </div>
                         <ul class="space-y-3 mb-6 text-gray-600 dark:text-gray-400">
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Automatisation simple</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Formules avancées</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Support basique</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Formation 5h</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Automatisation simple</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Formules avancées</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Support basique</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Formation 5h</li>
                         </ul>
-                        <a href="https://wa.me/237656035929?text=Bonjour%20Sir%20Alane%2C%20je%20souhaite%20commander%20la%20Formation%20Basique%20-%20Prix%3A%2015000%20FCFA" target="_blank" class="w-full btn-whatsapp text-white py-3 rounded-lg font-semibold flex items-center justify-center transition shadow-lg">
+                        <a href="https://wa.me/237656035929?text=Bonjour%20Sir%20Alane%2C%20je%20souhaite%20commander%20la%20Formation%20Basique%20-%20PROMO%208%20MARS%20-%20Prix%3A%2015000%20FCFA" target="_blank" class="w-full btn-whatsapp text-white py-3 rounded-lg font-semibold flex items-center justify-center transition shadow-lg">
                             <i class="fab fa-whatsapp mr-2 text-xl"></i>Commander via WhatsApp
                         </a>
                     </div>
                 </div>
-                <!-- Offre Standard -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden card-hover transform scale-105 border-4 border-secondary" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute top-0 right-0 bg-secondary text-white px-4 py-1 rounded-bl-lg font-semibold">Populaire</div>
-                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                <!-- Offre Standard - POPULAIRE -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden card-8mars card-hover transform md:scale-105 border-4 border-camRed relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 bg-gradient-to-r from-camRed to-camYellow text-white px-4 py-1 rounded-bl-lg font-semibold text-sm">⭐ Populaire</div>
+                    <div class="h-48 bg-gradient-to-br from-camGreen to-camRed flex items-center justify-center">
                         <i class="fas fa-layer-group text-6xl text-white"></i>
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-primary dark:text-white mb-2">Offre Standard</h3>
-                        <div class="text-3xl font-bold text-secondary mb-4">20 000 - 40 000 FCFA</div>
+                        <div class="flex items-baseline gap-2 mb-4">
+                            <span class="text-3xl font-bold text-secondary">20 000 - 40 000 FCFA</span>
+                            <span class="text-sm text-gray-500 line-through">23 500 - 47 000 FCFA</span>
+                        </div>
                         <ul class="space-y-3 mb-6 text-gray-600 dark:text-gray-400">
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Automatisation avancée</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Tableaux dynamiques</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Réduction d'erreurs</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Interfaces claires</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Formation 10h</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Automatisation avancée</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Tableaux dynamiques</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Réduction d'erreurs</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Interfaces claires</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Formation 10h</li>
                         </ul>
-                        <a href="https://wa.me/237656035929?text=Bonjour%20Sir%20Alane%2C%20je%20souhaite%20commander%20la%20Formation%20Standard%20-%20Prix%3A%2030000%20FCFA" target="_blank" class="w-full btn-whatsapp text-white py-3 rounded-lg font-semibold flex items-center justify-center transition shadow-lg">
+                        <a href="https://wa.me/237656035929?text=Bonjour%20Sir%20Alane%2C%20je%20souhaite%20commander%20la%20Formation%20Standard%20-%20PROMO%208%20MARS%20-%20Prix%3A%2030000%20FCFA" target="_blank" class="w-full btn-whatsapp text-white py-3 rounded-lg font-semibold flex items-center justify-center transition shadow-lg">
                             <i class="fab fa-whatsapp mr-2 text-xl"></i>Commander via WhatsApp
                         </a>
                     </div>
                 </div>
                 <!-- Offre Platinum -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden card-8mars card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-br from-camYellow to-camRed flex items-center justify-center">
                         <i class="fas fa-crown text-6xl text-white"></i>
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-primary dark:text-white mb-2">Offre Platinum</h3>
-                        <div class="text-3xl font-bold text-secondary mb-4">50 000 FCFA+</div>
+                        <div class="flex items-baseline gap-2 mb-4">
+                            <span class="text-3xl font-bold text-secondary">50 000 FCFA+</span>
+                            <span class="text-sm text-gray-500 line-through">59 000 FCFA</span>
+                        </div>
                         <ul class="space-y-3 mb-6 text-gray-600 dark:text-gray-400">
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Application sur mesure</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Macro VBA</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Sécurité des données</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Support premium</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i>Formation 20h+</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Application sur mesure</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Macro VBA</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Sécurité des données</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Support premium</li>
+                            <li><i class="fas fa-check text-camGreen mr-2"></i>Formation 20h+</li>
                         </ul>
-                        <a href="https://wa.me/237656035929?text=Bonjour%20Sir%20Alane%2C%20je%20souhaite%20commander%20la%20Formation%20Platinum%20-%20Prix%3A%2050000%20FCFA" target="_blank" class="w-full btn-whatsapp text-white py-3 rounded-lg font-semibold flex items-center justify-center transition shadow-lg">
+                        <a href="https://wa.me/237656035929?text=Bonjour%20Sir%20Alane%2C%20je%20souhaite%20commander%20la%20Formation%20Platinum%20-%20PROMO%208%20MARS%20-%20Prix%3A%2050000%20FCFA" target="_blank" class="w-full btn-whatsapp text-white py-3 rounded-lg font-semibold flex items-center justify-center transition shadow-lg">
                             <i class="fab fa-whatsapp mr-2 text-xl"></i>Commander via WhatsApp
                         </a>
                     </div>
@@ -283,35 +390,36 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl font-bold text-primary dark:text-white mb-4">Nos Applications Excel</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-400">Solutions clés en main pour votre entreprise</p>
-                <div class="w-24 h-1 bg-secondary mx-auto mt-4 rounded-full"></div>
+                <p class="text-xl text-gray-600 dark:text-gray-400">Solutions clés en main pour votre entreprise • <span class="text-womensPurple font-semibold">Conçues par des experts pour les gestionnaires</span></p>
+                <div class="w-24 h-1 bg-gradient-to-r from-camGreen via-camRed to-camYellow mx-auto mt-4 rounded-full"></div>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="applicationsGrid"></div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="temoignages" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <!-- Témoignages Section -->
+    <section id="temoignages" class="py-20 bg-womensPink dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-primary dark:text-white mb-4">Témoignages Clients</h2>
-                <div class="w-24 h-1 bg-secondary mx-auto mt-4 rounded-full"></div>
+                <h2 class="text-4xl font-bold text-primary dark:text-white mb-4">Elles nous font confiance 💜</h2>
+                <p class="text-gray-600 dark:text-gray-400">Des femmes camerounaises qui ont transformé leur travail avec Excel</p>
+                <div class="w-24 h-1 bg-womensPurple mx-auto mt-4 rounded-full"></div>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="0">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-8mars" data-aos="fade-up" data-aos-delay="0">
                     <div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">"Formation exceptionnelle ! J'ai automatisé 80% de mon travail quotidien. Je recommande vivement."</p>
-                    <div class="flex items-center"><div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold">AK</div><div class="ml-4"><div class="font-semibold text-primary dark:text-white">Aminata K.</div><div class="text-sm text-gray-500">Comptable</div></div></div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">"Formation exceptionnelle ! J'ai automatisé 80% de mon travail quotidien. Merci Sir Alane pour cette opportunité en ce 8 mars !"</p>
+                    <div class="flex items-center"><div class="w-12 h-12 bg-gradient-to-br from-camGreen to-camRed rounded-full flex items-center justify-center text-white font-bold">AK</div><div class="ml-4"><div class="font-semibold text-primary dark:text-white">Aminata K.</div><div class="text-sm text-gray-500">Comptable, Yaoundé</div></div></div>
                 </div>
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-8mars" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="text-gray-600 dark:text-gray-400 mb-4">"L'application de gestion de stock a transformé notre entreprise. Plus d'erreurs, tout est automatisé !"</p>
-                    <div class="flex items-center"><div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">DT</div><div class="ml-4"><div class="font-semibold text-primary dark:text-white">David T.</div><div class="text-sm text-gray-500">Gérant de supermarché</div></div></div>
+                    <div class="flex items-center"><div class="w-12 h-12 bg-gradient-to-br from-camRed to-camYellow rounded-full flex items-center justify-center text-white font-bold">DT</div><div class="ml-4"><div class="font-semibold text-primary dark:text-white">David T.</div><div class="text-sm text-gray-500">Gérant, Douala</div></div></div>
                 </div>
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-8mars" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="text-gray-600 dark:text-gray-400 mb-4">"Service client impeccable et application de paie très professionnelle. Excellent rapport qualité-prix."</p>
-                    <div class="flex items-center"><div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold">SM</div><div class="ml-4"><div class="font-semibold text-primary dark:text-white">Sophie M.</div><div class="text-sm text-gray-500">DRH</div></div></div>
+                    <div class="flex items-center"><div class="w-12 h-12 bg-gradient-to-br from-womensPurple to-camGreen rounded-full flex items-center justify-center text-white font-bold">SM</div><div class="ml-4"><div class="font-semibold text-primary dark:text-white">Sophie M.</div><div class="text-sm text-gray-500">DRH, Bafoussam</div></div></div>
                 </div>
             </div>
         </div>
@@ -322,37 +430,37 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl font-bold text-primary dark:text-white mb-4">Questions Fréquentes</h2>
-                <div class="w-24 h-1 bg-secondary mx-auto mt-4 rounded-full"></div>
+                <div class="w-24 h-1 bg-gradient-to-r from-camGreen via-camRed to-camYellow mx-auto mt-4 rounded-full"></div>
             </div>
             <div class="space-y-4" id="faqContainer"></div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="contact" class="py-20 bg-womensPink dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12">
                 <div data-aos="fade-right">
-                    <h2 class="text-4xl font-bold text-primary dark:text-white mb-6">Contactez-nous</h2>
-                    <p class="text-gray-600 dark:text-gray-400 mb-8">Une question ? Un projet ? N'hésitez pas à nous contacter.</p>
+                    <h2 class="text-4xl font-bold text-primary dark:text-white mb-6">📞 Contactez-nous</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">Une question ? Un projet ? N'hésitez pas à nous contacter. <span class="text-womensPurple font-semibold">Réponse sous 24h garantie !</span></p>
                     <div class="space-y-6">
-                        <div class="flex items-center space-x-4"><div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white"><i class="fas fa-phone"></i></div><div><div class="text-sm text-gray-500">Téléphone</div><div class="font-semibold text-primary dark:text-white">+237 656 035 929</div></div></div>
-                        <div class="flex items-center space-x-4"><div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white"><i class="fas fa-envelope"></i></div><div><div class="text-sm text-gray-500">Email</div><div class="font-semibold text-primary dark:text-white">alaneemvoutou@icloud.com</div></div></div>
-                        <div class="flex items-center space-x-4"><div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white"><i class="fab fa-whatsapp"></i></div><div><div class="text-sm text-gray-500">WhatsApp</div><div class="font-semibold text-primary dark:text-white">+237 656 035 929</div></div></div>
+                        <div class="flex items-center space-x-4"><div class="w-12 h-12 bg-gradient-to-br from-camGreen to-camRed rounded-full flex items-center justify-center text-white"><i class="fas fa-phone"></i></div><div><div class="text-sm text-gray-500">Téléphone</div><div class="font-semibold text-primary dark:text-white">+237 656 035 929</div></div></div>
+                        <div class="flex items-center space-x-4"><div class="w-12 h-12 bg-gradient-to-br from-camRed to-camYellow rounded-full flex items-center justify-center text-white"><i class="fas fa-envelope"></i></div><div><div class="text-sm text-gray-500">Email</div><div class="font-semibold text-primary dark:text-white">alaneemvoutou@icloud.com</div></div></div>
+                        <div class="flex items-center space-x-4"><div class="w-12 h-12 bg-gradient-to-br from-womensPurple to-camGreen rounded-full flex items-center justify-center text-white"><i class="fab fa-whatsapp"></i></div><div><div class="text-sm text-gray-500">WhatsApp</div><div class="font-semibold text-primary dark:text-white">+237 656 035 929</div></div></div>
                     </div>
                     <div class="mt-8 flex space-x-4">
-                        <a href="https://wa.me/237656035929" target="_blank" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition"><i class="fab fa-whatsapp text-xl"></i></a>
-                        <a href="tel:+237656035929" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition"><i class="fas fa-phone text-xl"></i></a>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alaneemvoutou@icloud.com" target="_blank" class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white hover:bg-red-600 transition"><i class="fas fa-envelope text-xl"></i></a>
+                        <a href="https://wa.me/237656035929" target="_blank" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition shadow-lg"><i class="fab fa-whatsapp text-xl"></i></a>
+                        <a href="tel:+237656035929" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition shadow-lg"><i class="fas fa-phone text-xl"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alaneemvoutou@icloud.com" target="_blank" class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white hover:bg-red-600 transition shadow-lg"><i class="fas fa-envelope text-xl"></i></a>
                     </div>
                 </div>
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl" data-aos="fade-left">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl card-8mars" data-aos="fade-left">
                     <form id="contactForm" onsubmit="handleContactSubmit(event)">
-                        <div class="mb-4"><label class="block text-gray-700 dark:text-gray-300 mb-2">Nom complet</label><input type="text" id="contactName" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-secondary"></div>
-                        <div class="mb-4"><label class="block text-gray-700 dark:text-gray-300 mb-2">Téléphone</label><input type="tel" id="contactPhone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-secondary"></div>
-                        <div class="mb-4"><label class="block text-gray-700 dark:text-gray-300 mb-2">Email</label><input type="email" id="contactEmail" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-secondary"></div>
-                        <div class="mb-6"><label class="block text-gray-700 dark:text-gray-300 mb-2">Message</label><textarea id="contactMessage" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-secondary"></textarea></div>
-                        <button type="submit" class="w-full btn-whatsapp text-white py-3 rounded-lg font-semibold"><i class="fas fa-paper-plane mr-2"></i>Envoyer le message</button>
+                        <div class="mb-4"><label class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Nom complet</label><input type="text" id="contactName" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-womensPurple transition"></div>
+                        <div class="mb-4"><label class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Téléphone</label><input type="tel" id="contactPhone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-womensPurple transition"></div>
+                        <div class="mb-4"><label class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Email</label><input type="email" id="contactEmail" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-womensPurple transition"></div>
+                        <div class="mb-6"><label class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Message</label><textarea id="contactMessage" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-womensPurple transition"></textarea></div>
+                        <button type="submit" class="w-full btn-whatsapp text-white py-3 rounded-lg font-semibold shadow-lg"><i class="fas fa-paper-plane mr-2"></i>Envoyer via WhatsApp</button>
                     </form>
                 </div>
             </div>
@@ -360,28 +468,62 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white py-12">
+    <footer class="bg-primary text-white py-12 border-t-4 border-camYellow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div><div class="flex items-center space-x-2 mb-4"><i class="fas fa-file-excel text-3xl text-secondary"></i><span class="text-2xl font-bold">Excel<span class="text-secondary">Pro</span></span></div><p class="text-gray-400">Automatisez et optimisez vos données avec Excel.</p></div>
-                <div><h4 class="font-semibold mb-4">Liens rapides</h4><ul class="space-y-2 text-gray-400"><li><a href="#home" class="hover:text-secondary transition">Accueil</a></li><li><a href="#formations" class="hover:text-secondary transition">Formations</a></li><li><a href="#applications" class="hover:text-secondary transition">Applications</a></li><li><a href="#contact" class="hover:text-secondary transition">Contact</a></li></ul></div>
-                <div><h4 class="font-semibold mb-4">Légal</h4><ul class="space-y-2 text-gray-400"><li><a href="#" onclick="showPolicy('privacy')" class="hover:text-secondary transition">Politique de confidentialité</a></li><li><a href="#" onclick="showPolicy('terms')" class="hover:text-secondary transition">Conditions générales</a></li></ul></div>
-                <div><h4 class="font-semibold mb-4">Sécurité</h4><div class="flex items-center space-x-2 text-green-400"><i class="fas fa-shield-alt text-2xl"></i><span>Paiement sécurisé</span></div><div class="mt-4 flex space-x-4"><i class="fab fa-cc-visa text-3xl"></i><i class="fab fa-cc-mastercard text-3xl"></i><i class="fas fa-mobile-alt text-3xl"></i></div></div>
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-file-excel text-3xl text-secondary"></i>
+                        <span class="text-2xl font-bold">Excel<span class="text-camYellow">Pro</span></span>
+                    </div>
+                    <p class="text-gray-400">Automatisez et optimisez vos données avec Excel. <span class="text-womensPurple">🌸 Spécial Journée de la Femme</span></p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-camYellow">Liens rapides</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-secondary transition">Accueil</a></li>
+                        <li><a href="#formations" class="hover:text-secondary transition">Formations</a></li>
+                        <li><a href="#applications" class="hover:text-secondary transition">Applications</a></li>
+                        <li><a href="#contact" class="hover:text-secondary transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-camYellow">Légal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" onclick="showPolicy('privacy')" class="hover:text-secondary transition">Politique de confidentialité</a></li>
+                        <li><a href="#" onclick="showPolicy('terms')" class="hover:text-secondary transition">Conditions générales</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-camYellow">Sécurité</h4>
+                    <div class="flex items-center space-x-2 text-green-400">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                        <span>Paiement sécurisé</span>
+                    </div>
+                    <div class="mt-4 flex space-x-4 text-2xl">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                </div>
             </div>
-            <div class="border-t border-gray-700 pt-8 text-center text-gray-400"><p>&copy; 2026 Application Excel Intelligente. Tous droits réservés.</p></div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Application Excel Intelligente. Tous droits réservés.</p>
+                <p class="mt-2 text-sm">🇨🇲 Vert, Rouge, Jaune - Unité, Travail, Patrie | 🌸 8 Mars : Célébrons les femmes du Cameroun</p>
+            </div>
         </div>
     </footer>
 
     <!-- Admin Login Modal -->
     <div id="adminModal" class="ussd-modal">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
-            <h3 class="text-2xl font-bold text-primary dark:text-white mb-6 text-center">Accès Admin</h3>
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl border-t-4 border-womensPurple">
+            <h3 class="text-2xl font-bold text-primary dark:text-white mb-6 text-center">🔐 Accès Admin</h3>
             <form onsubmit="handleAdminLogin(event)">
-                <div class="mb-4"><label class="block text-gray-700 dark:text-gray-300 mb-2">Email</label><input type="email" id="adminEmail" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-secondary"></div>
-                <div class="mb-6"><label class="block text-gray-700 dark:text-gray-300 mb-2">Mot de passe</label><input type="password" id="adminPassword" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-secondary"></div>
+                <div class="mb-4"><label class="block text-gray-700 dark:text-gray-300 mb-2">Email</label><input type="email" id="adminEmail" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-womensPurple"></div>
+                <div class="mb-6"><label class="block text-gray-700 dark:text-gray-300 mb-2">Mot de passe</label><input type="password" id="adminPassword" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-womensPurple"></div>
                 <div class="flex space-x-4">
                     <button type="button" onclick="closeAdminModal()" class="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">Annuler</button>
-                    <button type="submit" class="flex-1 btn-primary text-white px-4 py-3 rounded-lg font-semibold">Connexion</button>
+                    <button type="submit" class="flex-1 bg-womensPurple hover:bg-purple-800 text-white px-4 py-3 rounded-lg font-semibold transition">Connexion</button>
                 </div>
             </form>
         </div>
@@ -390,26 +532,56 @@
     <!-- Admin Dashboard -->
     <div id="adminDashboard" class="fixed inset-0 bg-gray-100 dark:bg-gray-900 z-50 overflow-auto hidden">
         <div class="p-8"><div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-center mb-8"><h2 class="text-3xl font-bold text-primary dark:text-white">Tableau de bord Admin</h2><button onclick="closeAdminDashboard()" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"><i class="fas fa-times text-2xl"></i></button></div>
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-primary dark:text-white">📊 Tableau de bord Admin</h2>
+                <button onclick="closeAdminDashboard()" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"><i class="fas fa-times text-2xl"></i></button>
+            </div>
             <div class="grid md:grid-cols-4 gap-6 mb-8">
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg"><div class="text-3xl font-bold text-secondary" id="totalOrders">0</div><div class="text-gray-600 dark:text-gray-400">Total commandes</div></div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg"><div class="text-3xl font-bold text-blue-600" id="totalRevenue">0 FCFA</div><div class="text-gray-600 dark:text-gray-400">Revenu total</div></div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg"><div class="text-3xl font-bold text-purple-600" id="totalFormations">0</div><div class="text-gray-600 dark:text-gray-400">Formations</div></div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg"><div class="text-3xl font-bold text-green-600" id="totalApps">0</div><div class="text-gray-600 dark:text-gray-400">Applications</div></div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-camGreen">
+                    <div class="text-3xl font-bold text-secondary" id="totalOrders">0</div>
+                    <div class="text-gray-600 dark:text-gray-400">Total commandes</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-camRed">
+                    <div class="text-3xl font-bold text-blue-600" id="totalRevenue">0 FCFA</div>
+                    <div class="text-gray-600 dark:text-gray-400">Revenu total</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-camYellow">
+                    <div class="text-3xl font-bold text-purple-600" id="totalFormations">0</div>
+                    <div class="text-gray-600 dark:text-gray-400">Formations</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-womensPurple">
+                    <div class="text-3xl font-bold text-green-600" id="totalApps">0</div>
+                    <div class="text-gray-600 dark:text-gray-400">Applications</div>
+                </div>
             </div>
             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                <div class="p-6 border-b border-gray-200 dark:border-gray-700"><h3 class="text-xl font-bold text-primary dark:text-white">Dernières commandes</h3></div>
-                <div class="overflow-x-auto"><table class="w-full"><thead class="bg-gray-50 dark:bg-gray-700"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Date</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Client</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Produit</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Prix</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Contact</th></tr></thead><tbody id="ordersTableBody" class="divide-y divide-gray-200 dark:divide-gray-700"></tbody></table></div>
+                <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                    <h3 class="text-xl font-bold text-primary dark:text-white">📦 Dernières commandes</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50 dark:bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Date</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Client</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Produit</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Prix</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody" class="divide-y divide-gray-200 dark:divide-gray-700"></tbody>
+                    </table>
+                </div>
             </div>
         </div></div>
     </div>
 
     <!-- Policy Modal -->
     <div id="policyModal" class="ussd-modal">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-2xl w-full mx-4 shadow-2xl max-h-[80vh] overflow-auto">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-2xl w-full mx-4 shadow-2xl max-h-[80vh] overflow-auto border-t-4 border-camYellow">
             <h3 id="policyTitle" class="text-2xl font-bold text-primary dark:text-white mb-4"></h3>
             <div id="policyContent" class="text-gray-600 dark:text-gray-400 space-y-4"></div>
-            <button onclick="closePolicyModal()" class="mt-6 btn-primary text-white px-6 py-2 rounded-lg">Fermer</button>
+            <button onclick="closePolicyModal()" class="mt-6 bg-womensPurple hover:bg-purple-800 text-white px-6 py-2 rounded-lg transition">Fermer</button>
         </div>
     </div>
 
@@ -455,7 +627,7 @@
             { q: "Les applications sont-elles personnalisables ?", a: "Oui, toutes nos applications peuvent être adaptées à vos besoins spécifiques. Contactez-nous pour un devis personnalisé." }
         ];
         
-        // WhatsApp number - Votre numéro formaté pour wa.me
+        // WhatsApp number
         const WHATSAPP_NUMBER = "237656035929";
         
         // Initialize
@@ -473,16 +645,19 @@
         function renderApplications() {
             const grid = document.getElementById('applicationsGrid');
             grid.innerHTML = applications.map((app, index) => {
-                const message = encodeURIComponent(`Bonjour Sir Alane, je souhaite commander: ${app.name} - Prix: ${app.price.toLocaleString()} FCFA`);
+                const message = encodeURIComponent(`Bonjour Sir Alane, je souhaite commander: ${app.name} - Prix: ${app.price.toLocaleString()} FCFA - PROMO 8 MARS 🌸`);
                 const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
                 return `
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="${index * 50}">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover card-8mars" data-aos="fade-up" data-aos-delay="${index * 50}">
                         <div class="h-40 bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center">
                             <i class="fas ${app.icon} text-5xl text-white"></i>
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-primary dark:text-white mb-2">${app.name}</h3>
-                            <div class="text-2xl font-bold text-secondary mb-4">${app.price.toLocaleString()} FCFA</div>
+                            <div class="flex items-baseline gap-2 mb-4">
+                                <span class="text-2xl font-bold text-secondary">${app.price.toLocaleString()} FCFA</span>
+                                <span class="text-xs text-gray-500 line-through">${Math.round(app.price * 1.15).toLocaleString()} FCFA</span>
+                            </div>
                             <a href="${whatsappLink}" target="_blank" class="w-full btn-whatsapp text-white py-3 rounded-lg font-semibold flex items-center justify-center transition shadow-lg">
                                 <i class="fab fa-whatsapp mr-2 text-xl"></i>Commander via WhatsApp
                             </a>
@@ -496,7 +671,7 @@
         function renderFAQs() {
             const container = document.getElementById('faqContainer');
             container.innerHTML = faqs.map((faq, index) => `
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="${index * 100}">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden card-8mars" data-aos="fade-up" data-aos-delay="${index * 100}">
                     <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(${index})">
                         <span class="font-semibold text-primary dark:text-white">${faq.q}</span>
                         <i class="fas fa-chevron-down transform transition-transform" id="faqIcon${index}"></i>
@@ -530,6 +705,14 @@
             menu.classList.toggle('hidden');
         }
         
+        function openAdminModal() {
+            document.getElementById('adminModal').classList.add('active');
+        }
+        
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.remove('active');
+        }
+        
         // Contact form
         async function handleContactSubmit(e) {
             e.preventDefault();
@@ -549,15 +732,14 @@
             }
             
             // Rediriger vers WhatsApp avec le message pré-rempli
-            const whatsappMessage = encodeURIComponent(`Bonjour Sir Alane,\n\nNom: ${name}\nTéléphone: ${phone}\nEmail: ${email}\n\nMessage: ${message}`);
+            const whatsappMessage = encodeURIComponent(`🌸 PROMO 8 MARS - Bonjour Sir Alane,\n\nNom: ${name}\nTéléphone: ${phone}\nEmail: ${email}\n\nMessage: ${message}`);
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`, '_blank');
             
             document.getElementById('contactForm').reset();
-            alert('Merci ! Vous allez être redirigé vers WhatsApp pour finaliser votre demande.');
+            alert('Merci ! Vous allez être redirigé vers WhatsApp pour finaliser votre demande. 🌸');
         }
         
         // Admin functions
-        function closeAdminModal() { document.getElementById('adminModal').classList.remove('active'); }
         async function handleAdminLogin(e) {
             e.preventDefault();
             if (typeof auth === 'undefined') { alert('Firebase non configuré'); return; }
@@ -569,6 +751,7 @@
                 loadAdminDashboard();
             } catch (error) { alert('Erreur de connexion: ' + error.message); }
         }
+        
         async function loadAdminDashboard() {
             if (typeof db === 'undefined') { alert('Firebase non configuré'); return; }
             document.getElementById('adminDashboard').classList.remove('hidden');
@@ -594,7 +777,11 @@
                 </tr>
             `).join('');
         }
-        function closeAdminDashboard() { document.getElementById('adminDashboard').classList.add('hidden'); if (typeof auth !== 'undefined') auth.signOut(); }
+        
+        function closeAdminDashboard() { 
+            document.getElementById('adminDashboard').classList.add('hidden'); 
+            if (typeof auth !== 'undefined') auth.signOut(); 
+        }
         
         // Policy modal
         function showPolicy(type) {
@@ -602,15 +789,18 @@
             const title = document.getElementById('policyTitle');
             const content = document.getElementById('policyContent');
             if (type === 'privacy') {
-                title.textContent = 'Politique de Confidentialité';
+                title.textContent = '🔒 Politique de Confidentialité';
                 content.innerHTML = `<p>Nous nous engageons à protéger votre vie privée. Les informations collectées sont utilisées uniquement pour traiter vos commandes et vous contacter.</p><p>Données collectées: Nom, téléphone, email, historique des commandes.</p><p>Vos données ne sont jamais vendues à des tiers.</p>`;
             } else {
-                title.textContent = 'Conditions Générales';
+                title.textContent = '📋 Conditions Générales';
                 content.innerHTML = `<p>En commandant sur notre site, vous acceptez nos conditions générales.</p><p>Les fichiers sont livrés par email après confirmation du paiement.</p><p>Les formations sont non remboursables mais transférables.</p><p>Support technique inclus selon l'offre choisie.</p>`;
             }
             modal.classList.add('active');
         }
-        function closePolicyModal() { document.getElementById('policyModal').classList.remove('active'); }
+        
+        function closePolicyModal() { 
+            document.getElementById('policyModal').classList.remove('active'); 
+        }
         
         // Animate counters
         function animateCounters() {
@@ -619,8 +809,12 @@
                 const increment = target / 100;
                 const updateCounter = () => {
                     const count = +counter.innerText;
-                    if (count < target) { counter.innerText = Math.ceil(count + increment); setTimeout(updateCounter, 20); }
-                    else { counter.innerText = target + (target > 100 ? '+' : ''); }
+                    if (count < target) { 
+                        counter.innerText = Math.ceil(count + increment); 
+                        setTimeout(updateCounter, 20); 
+                    } else { 
+                        counter.innerText = target + (target > 100 ? '+' : ''); 
+                    }
                 };
                 updateCounter();
             });
@@ -634,25 +828,11 @@
         
         // Auth state listener
         if (typeof auth !== 'undefined') {
-            auth.onAuthStateChanged((user) => { if (user) console.log('Admin logged in:', user.email); });
+            auth.onAuthStateChanged((user) => { 
+                if (user) console.log('Admin logged in:', user.email); 
+            });
         }
     </script>
 </body>
 </html>
 
-
-
-              <script>
-                              const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",  // ← Remplacez par votre vraie clé
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    // ... autres champs
-};
-
-const WHATSAPP_NUMBER = "237656035929"; // Format: indicatif + numéro, sans espaces ni +
-
-
-              </script>
-                        </body>
-                        </html>
